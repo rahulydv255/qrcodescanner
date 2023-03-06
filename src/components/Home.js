@@ -25,8 +25,7 @@ function Home() {
                     <ProductTable/>
                     <br/>
                     <br/>
-                    <h2> Click On the Below link to Open Scanner</h2>
-                    <Link to="/qrscanner">Click Here...</Link>
+                    
                 </>
             ) : (
                 <>

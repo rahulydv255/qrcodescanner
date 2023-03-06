@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React, {
+  useEffect,
     useState
 } from "react";
 import { redirect, useNavigate } from "react-router-dom";
@@ -23,17 +24,22 @@ const QrScanner = () => {
 
   const title = "Do you want to visit?"
 
+  useEffect(()=>{
+    handleScan();
+  })
 
   const handleScan = (result) => {
+    setTimeout(() => {
     if (result) {
       setResult(result.data);
       console.log(result);
       setQrOpen(false)
       }
-      else{
         alert("Please try again later or use different QR code...")
-      }
+      }, 20000)
   };
+
+  setTimeout(() => console.log('Initial timeout!'), 1000);
   
   const handleClick = ()=>{
     window.location = result;
